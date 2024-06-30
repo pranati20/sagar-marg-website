@@ -10,11 +10,6 @@ Welcome to the repository for Sagarmarg, an import-export business website.
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Deployment](#deployment)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
 - [Link to the Website](#link-to-the-website)
 
 ## Introduction
