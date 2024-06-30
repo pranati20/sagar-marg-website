@@ -1,0 +1,723 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=LXGW+WenKai+TC&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC&display=swap');
+html {
+    scroll-behavior: smooth;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  .fixed-image {
+    position: fixed;
+    left: 20px; /* Adjust as needed for horizontal position */
+    bottom: 20px; /* Adjust as needed for vertical position */
+    z-index: 1000; /* Ensure it's above other content */
+  }
+  
+  .fixed-image img {
+    width: 70px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+  }
+  body {
+    height: 120vh;
+    display: flex;
+    flex-direction: column; 
+    overflow-y: scroll;
+    background-color: rgba(254, 255, 255, 0.2);
+    position: relative; /* Needed for the pseudo-element */
+  }
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(194, 194, 194, 0.299) url('images\\My first design 1.png') center/cover no-repeat; /* Adjust opacity here */
+    border-radius: 20px;
+    z-index: -1;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  overflow: hidden; /* Ensure overflow is hidden to contain the scroll progress */
+  height: 95px; /* Adjust based on your navbar height */
+}
+
+.nav-links {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-left: 20px;
+  position: relative; /* Needed for the hover effect */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.nav-links a:hover {
+  color: #d75214; /* Change to your desired hover color */
+}
+
+/* Add a hover effect under the text */
+.nav-links a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #2b3287; /* Change to your desired hover color */
+  transition: width 0.3s;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.scroll-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px; /* Adjust the height of the progress bar */
+  background: #2b3287; /* Change to your desired color */
+  width: 0;
+  transition: width 0.3s ease-out; /* Smooth transition for the width */
+  z-index: 1000; /* Ensure it stays above other elements */
+}
+
+/* Logo styles */
+.logo {
+  width: 200px;
+  height: auto;
+}
+
+
+
+
+  .home{
+    border-radius: 20px;
+  }
+  .hometext {
+    position: relative; 
+    text-align: left;
+    margin-top: 500px; 
+    margin-left:60px;
+    
+  }
+  
+  .hometext h1 {
+    color: #2b3287;
+    font-size: 90px;
+    font-weight: 700;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+    line-height: 1;
+  }
+  
+  .hometext h3 {
+    color:#ffffff;
+    font-size: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 400;
+  }
+  .aboutus {
+    margin-top: 240px;
+    width: 100%;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ff6233;
+    border-radius: 20px;
+    position: relative; /* Added to position the vertical text */
+  }
+  .aboutus h1{
+    font-size: 5em;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    color: white;
+  }
+  
+  
+  .about-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .about-item .about-text {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .about-item .about-image {
+    flex: 1;
+    padding: 20px;
+  }
+ 
+  
+  .about-item .about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 40px;
+  }
+  
+  .about-item.reverse {
+    flex-direction: row-reverse;
+  }
+  .about-text h2 {
+  
+    text-align: left;
+    align-items: center;
+    justify-content:end;
+    margin-bottom: 10px;
+    font-size: 3em;
+    color: #2b3287;
+    font-weight: 500;
+    font-style: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .about-text p {
+    font-size: 1.2em;
+    color: #ffffff;
+    line-height: 1.6;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  }
+
+  .services-section {
+    width: 100%;
+    height: 900vh; 
+    background-color: #2b3287;
+    position: relative;
+    margin-top: 70px;
+    padding: 20px;
+    border-radius: 30px;
+}
+
+.serviceImg {
+    width: 100%;
+    height: 50%; 
+    object-fit: cover;
+    display: block; 
+}
+
+.container-row {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 85%;
+    height: 65%; 
+    position: absolute;
+    top: 20%;
+    gap: 10px; 
+    margin-left: 80px;
+}
+
+.white-container {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  flex: 1;
+  background-color: white;
+  max-width: 100%;
+  height: 90%; 
+  margin: 0 20px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.479);
+  border-radius: 8px; 
+  padding: 20px; 
+  text-align: center; 
+  position: relative; /* Ensure relative positioning for absolute children */
+}
+
+.white-container .text-content {
+  position: absolute;
+  bottom: 70px; /* Adjust as needed */
+  left: 0;
+  right: 0;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px; /* Add padding to center text */
+}
+
+.white-container .text-content h3 {
+  margin-top: 20px; /* Adjust top margin for the heading */
+  margin-bottom: 10px; /* Adjust bottom margin for the heading */
+  font-size: 1.9em; 
+  color: #000000;
+}
+
+.white-container .text-content p {
+  margin-top: 10px; /* Adjust top margin for the paragraph */
+  margin-bottom: 20px; /* Adjust bottom margin for the paragraph */
+  font-size: 1.2em; 
+  color: #0544af; 
+  margin-left: 30px;
+}
+
+.white-container .text-content .know-more {
+  display: inline-block;
+  margin-top: 10px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.white-container .text-content .know-more:hover {
+  text-decoration: none;
+}
+
+
+.know-more {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #200985;
+    color: #2b3287;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    
+  }
+  
+  .know-more:hover {
+    background-color: #ff6233;
+    color: #fff;
+  }
+
+.icon {
+    width: 140px; 
+    height: 120px; 
+    margin-bottom: 350px;
+}
+
+.icon2 {
+    width: 100px;
+    height: 200px; 
+    margin-bottom: 350px; 
+}
+
+.icon3 {
+    width:150px; /* Corrected width value */
+    height: 130px; 
+    margin-bottom: 340px; 
+}
+
+.icon4 {
+    width: 140px; /* Corrected width value */
+    height: 150px; 
+    margin-bottom: 265px; 
+}
+
+
+h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+  }
+
+  .footer-distributed{
+    background: #2b3287;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: bold 16px sans-serif;
+    padding: 75px 50px;
+    margin-top: 40px;
+
+  }
+  .footer-quick-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-quick-links ul li {
+    line-height: 1.8;
+  }
+  
+  .footer-quick-links ul li a {
+    text-decoration: none;
+    color:white;
+    font-weight:norm;
+  }
+  .footer-line {
+    border: 0; /* Remove default border */
+    border-top: 2px solid #ccc; /* Add top border with color */
+    width: 100%; /* Ensure full width */
+    margin: 20px; /* Remove default margin */
+  }
+  .footer-company-name{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+   
+  }
+  
+  
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right{
+    display: inline-block;
+    vertical-align: top;
+  }
+  .footer-line {
+    border: 0; /* Remove default border */
+    border-top: 2px solid #ccc; /* Add top border with color */
+    width: 100%; /* Ensure full width */
+    margin: 20px; /* Remove default margin */
+  }
+  .footer-company-name{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+   
+  }
+  
+  
+  /* Footer left */
+  
+  .footer-distributed .footer-left{
+    width: 40%;
+  }
+  
+  /* The company logo */
+  
+  .footer-distributed h3{
+    color:  #ffffff;
+    margin-left: 70px;
+    margin-bottom: 10px;
+  
+  }
+  .footer-about h2{
+    font-size: 24px; /* Font size for the heading */
+    color: #343a40; /* Darker color for the heading */
+    margin-bottom: 10px; /* Space below the heading */
+    font-weight: bold; /* Bold font for the heading */
+  }
+  
+  .footer-about p {
+    font-size: 16px; 
+    color: #6c757d; 
+    margin-left:70px;
+  
+    
+  }
+  .footer-distributed h3 span{
+    color:  lightseagreen;
+  }
+  
+  /* Footer links */
+  
+  .footer-distributed .footer-links{
+    color:  #ffffff;
+    margin: 20px 0 12px;
+    padding: 0;
+  }
+  
+  .footer-distributed .footer-links a{
+    display:inline-block;
+    line-height: 1.8;
+    font-weight:400;
+    text-decoration: none;
+    color:  inherit;
+  }
+  
+  .footer-distributed .footer-company-name{
+    color:  #ffffff;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+  }
+  
+  /* Footer Center */
+  
+  .footer-distributed .footer-center{
+    width: 35%;
+  }
+  
+  .footer-distributed .footer-center i{
+    background-color:  #787c7e78;
+    color: #ffffff;
+    font-size: 25px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+  }
+  
+  .footer-distributed .footer-center i.fa-envelope{
+    font-size: 17px;
+    line-height: 38px;
+  }
+  
+  .footer-distributed .footer-center p{
+    display: inline-block;
+    color: #ffffff;
+    font-weight:400;
+    vertical-align: middle;
+    margin:0;
+  }
+  
+  .footer-distributed .footer-center p span{
+    display:block;
+    font-weight: normal;
+    font-size:14px;
+    line-height:2;
+  }
+  
+  .footer-distributed .footer-center p a{
+    color:  lightseagreen;
+    text-decoration: none;;
+  }
+  
+  .footer-distributed .footer-links a:before {
+    content: "|";
+    font-weight:300;
+    font-size: 20px;
+    left: 0;
+    color: #fff;
+    display: inline-block;
+    padding-right: 5px;
+  }
+  
+  .footer-distributed .footer-links .link-1:before {
+    content: none;
+  }
+  
+  /* Footer Right */
+  
+  .footer-distributed .footer-right{
+    width: 20%;
+  }
+  
+  .footer-distributed .footer-company-about{
+    line-height: 20px;
+    color:  white;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+  }
+  
+  .footer-distributed .footer-company-about span{
+    display: block;
+    color:  #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .footer-distributed .footer-icons{
+    margin-top: 25px;
+  }
+  
+  .footer-distributed .footer-icons a{
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    background-color:  #33383b;
+    border-radius: 2px;
+  
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+  
+    margin-right: 3px;
+    margin-bottom: 5px;
+  }
+  
+  /* If you don't want the footer to be responsive, remove these media queries */
+  
+  @media (max-width: 880px) {
+  
+    .footer-distributed{
+      font: bold 14px sans-serif;
+    }
+  
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-center,
+    .footer-distributed .footer-right{
+      display: block;
+      width: 100%;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+  
+    .footer-distributed .footer-center i{
+      margin-left: 0;
+    }
+  
+  }
+  .footerlogo {
+    width: 260px;
+    box-shadow: 0px 0px 10px 2px white;
+    height: auto;
+    margin-left: 70px;
+    margin-bottom:40px
+  }
+  
+/* Add transition to nav links */
+.nav-links li a {
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #f39c12; /* Change to your desired hover color */
+  background-color: #ecf0f1; /* Change to your desired hover background color */
+}
+
+/* Add transition to images in about section */
+.about-image img {
+  transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.1); /* Scale up the image on hover */
+}
+
+/* Add transition to white containers in services section */
+.white-container {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.white-container:hover {
+  transform: translateY(-10px); /* Move the container up on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+/* Add transition to footer icons */
+.footer-icons a {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-icons a:hover {
+  color: #f39c12; /* Change to your desired hover color */
+  transform: scale(1.2); /* Scale up the icon on hover */
+}
+/* Existing CSS content */
+
+/* Custom styles for AOS animations if needed */
+[data-aos="fade-up"] {
+  transition: opacity 0.6s ease-in, transform 0.6s ease-out;
+}
+ 
+/* responsive*/
+
+@media (max-width: 1200px) {
+  .aboutus {
+   margin-top:140px;
+  }
+
+  .white-container .text-content {
+    position: absolute;
+    bottom: 70px;
+    font-size: 0.75em;
+    right: 0;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+}
+.icon2 {
+  width: 100px;
+  height: 200px;
+  margin-bottom: 300px;
+}
+.icon {
+  width: 100px;
+  height: 200px;
+  margin-bottom: 300px;
+}
+.icon3 {
+  width: 100px;
+  height: 200px;
+  margin-bottom: 300px;
+}
+}
+
+@media (max-width: 768px) {
+  .aboutus {
+    margin-top: 180px; /* Adjust margin-top for .aboutus */
+    padding: 30px 15px; /* Adjust padding for .aboutus */
+  }
+
+
+}
+@media (min-width: 768px) and (max-width: 1200px) {
+  .white-container .text-content {
+   bottom:30px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1000px) {
+  .aboutus {
+    margin-top: 900px; /* Adjust margin-bottom for .about-item between 768px and 1200px */
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .aboutus {
+    margin-top: 400px; /* Adjust margin-bottom for .about-item between 768px and 1200px */
+  }
+}
+ 
+@media (max-width: 1200px) {
+  .aboutus {
+    /* Your styles for .aboutus at max-width: 1200px */
+    margin-top: 500px;
+    width: 100%;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background:#ff6233;
+    border-radius: 20px;
+    position: relative;
+  }
+
+  .about-item {
+    /* Adjust styles for .about-item */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px; /* Adjust margin as needed */
+  }
+}

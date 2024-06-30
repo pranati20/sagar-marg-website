@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SAGAR MART</title>
+    <link rel="stylesheet" href="contactus.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    
+  <nav class="navbar" id="homesec">
+    <img src="images/download.png" class="logo"/>
+    <ul class="nav-links">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="index.html">ABOUT</a></li>
+        <li><a href="services.html">SERVICES</a></li>
+        <li><a href="contactus.html">CONTACT</a></li>
+    </ul>
+    <div class="scroll-progress"></div>
+</nav>
+
+    <div class="home">
+    <div class="hometext" id="home" >
+        <h1   data-aos="fade-in"  data-aos-duration="1500">Get in Touch <br> With Us</h1>
+    </div>
+</div>
+<div class="contact-us-section" id="contactus">
+    <div class="contact-container">
+        <img src="images/contactus.webp" class="contact-image" alt="Contact Us Image"/>
+        <form class="contact-form" id="contact-form">
+            <h2>Contact Us</h2>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+    <div class="contact-text">
+        <h2>Our Contact Information</h2>
+        <p>Feel free to reach out to us for any inquiries or assistance you may need. We're here to help!</p>
+    </div>
+</div>
+
+<footer class="footer-distributed">
+
+  <div class="footer-left">
+      <img src="images/1.png" class="footerlogo"/>
+      <div class="footer-about">
+          <h3>Welcome to Sagarmarg</h3>
+          <p>Your trusted partner <br> for seamless global trade solutions. <br> Connecting your business to the world<br> with efficiency and expertise.</p>
+      </div>
+  </div>
+
+  <div class="footer-center">
+      <div>
+          <i class="fa fa-map-marker"></i>
+          <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
+      </div>
+
+      <div>
+          <i class="fa fa-phone"></i>
+          <p>+1.555.555.5555</p>
+      </div>
+
+      <div>
+          <i class="fa fa-envelope"></i>
+          <p><a href="mailto:support@company.com">support@company.com</a></p>
+      </div>
+  </div>
+
+  <div class="footer-right">
+      <div class="footer-quick-links">
+          <h2>Quick Links</h2>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+
+            <li><a href="contactus.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-icons">
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-instagram"></i></a>
+      </div>
+  </div>
+
+  <div class="footer-bottom">
+      <hr class= "footer-line"> <!-- Horizontal line to separate from upper part -->
+      <p class="footer-company-name">&copy; 2024. All Rights Reserved. Designed by ShiderTech</p>
+  </div>
+
+</footer>
+<a href="https://wa.me/9666941549" target="_blank"class="fixed-image">
+    <img src="images/whatsapp-img.jpeg" alt="Fixed Image">
+  </a>
+<script>
+  document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    var form = document.getElementById('contact-form');
+    var data = new FormData(form);
+
+    fetch('https://script.google.com/macros/s/AKfycbxLY0hjhvOt11vxwyqHrTpZYCF7pAiRm3UDBgavamcAeRxWOqzP8s26ZzKOSD904129/exec', { // Replace 'YOUR_WEB_APP_URL' with your Google Apps Script URL
+      method: 'POST',
+      body: data
+    }).then(response => {
+      if (response.ok) {
+        alert('Form submitted successfully!');
+      } else {
+        alert('There was an error submitting the form.');
+      }
+      form.reset();
+    }).catch(error => {
+      alert('There was an error submitting the form.');
+    });
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init();
+  </script>
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+</body>
+</html>
